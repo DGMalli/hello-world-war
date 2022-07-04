@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent { label 'slave_1' }
     stages {
         stage('Clone Project') {
             steps {
@@ -10,6 +10,12 @@ pipeline {
          stage('Build Project') {
             steps {
                 sh 'mvn package'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'sudo mv /home/slave_1/workspace/Hellow_world/target/hello-world-war-1.0.0.war /home/slave_1/workspace/Hellow_world/target/pipeline_project.war'
+                sh 'sudo cp /home/slave_1/workspace/Hellow_world/target/pipeline_project.war /opt/apache-tomcat-9.0.64/webapps'
             }
         }
     }
