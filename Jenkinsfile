@@ -1,10 +1,10 @@
-
+properties([parameters([choice(choices: ['ONE', 'TWO'], name: '')])]) 
 pipeline {
     agent { label 'java' }
     
       
     stages {
-        properties([parameters([choice(choices: ['ONE', 'TWO'], name: '')])])   
+          
         stage('Clone Project') {
             steps {
                 sh 'rm -rf hello-world-war'
