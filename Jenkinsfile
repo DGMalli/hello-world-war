@@ -1,9 +1,7 @@
  
 pipeline {
     agent { label 'java' }
-    parameters{
-        choice(name: 'Select the number' , choices: ['ONE', 'TWO' ,'THREE' , 'FOUR'])
-    }
+   
       
     stages {       
           
