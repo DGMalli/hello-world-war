@@ -1,4 +1,4 @@
-properties([ parameters([ choice( choices: ['ONE', 'TWO'])])])
+properties([parameters([choice(choices: ['ONE', 'TWO'], name: '')])])
 
 pipeline {
     agent { label 'java' }
