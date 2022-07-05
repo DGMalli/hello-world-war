@@ -5,7 +5,6 @@ pipeline {
         ([ choice( choices: ['ONE', 'TWO'])])
         }
     
-    }
     stages {
         stage('Clone Project') {
             steps {
