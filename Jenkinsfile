@@ -1,9 +1,11 @@
-properties([parameters([choice(choices: ['ONE', 'TWO'], name: '')])]) 
+ 
 pipeline {
     agent { label 'java' }
-    
+    parameters{
+        choice(name: 'Select the number' , choices: ['ONE', 'TWO' ,'THREE' , 'FOUR'])
+    }
       
-    stages {
+    stages {       
           
         stage('Clone Project') {
             steps {
