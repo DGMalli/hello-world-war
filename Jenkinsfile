@@ -20,8 +20,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                 sh 'sudo mv /home/slaveuser/workspace/Hellowworld_Pipeline/target/hello-world-war-1.0.0.war /home/slaveuser/workspace/Hellowworld_Pipeline/target/Parameter_MallikarjunaDG1.war'
-                 sh 'sudo cp /home/slaveuser/workspace/Hellowworld_Pipeline/target/Parameter_MallikarjunaDG1.war /opt/apache-tomcat-9.0.64/webapps'
+                 sh 'sudo mv /home/slaveuser/workspace/Hellow_multi_master/target/hello-world-war-1.0.0.war /home/slaveuser/workspace/Hellow_multi_master/target/Parameter_MallikarjunaDG1.war'
+                 sh 'sudo cp /home/slaveuser/workspace/Hellow_multi_master/target/Parameter_MallikarjunaDG1.war /opt/apache-tomcat-9.0.64/webapps'
             }
         }
     }
