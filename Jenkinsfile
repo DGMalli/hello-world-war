@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 
-                sh 'sudo cp /home/slave_1/workspace/Multi_devops/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.64/webapps'
+                sh 'sudo cp /home/slaveuser/workspace/Hellow_multi_devops/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.64/webapps'
             }
         }
     }
