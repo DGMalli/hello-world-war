@@ -18,8 +18,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                 sudo 'mv /home/slaveuser/workspace/hellowworld/target/hello-world-war-1.0.0.war /home/slaveuser/workspace/hellowworld/target/MallikarjunaDG1.war'
-                 sudo 'cp /home/slaveuser/workspace/hellowworld/target/MallikarjunaDG1.war /opt/apache-tomcat-9.0.64/webapps'
+                 sh 'sudo mv /home/slaveuser/workspace/hellowworld/target/hello-world-war-1.0.0.war /home/slaveuser/workspace/hellowworld/target/MallikarjunaDG1.war'
+                 sh 'sudo cp /home/slaveuser/workspace/hellowworld/target/MallikarjunaDG1.war /opt/apache-tomcat-9.0.64/webapps'
             }
         }
     }
