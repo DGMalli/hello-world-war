@@ -10,7 +10,7 @@ pipeline {
 
   stage('Docker Build and Tag') {
            steps {  
-		  sh 'cd hello-world-war' 
+		  sh 'cd /hello-world-war' 
                 sh 'docker build -t samplewebapp:latest .' 
                 sh 'docker tag samplewebapp dgmarjun/samplewebapp:latest' 
             }
