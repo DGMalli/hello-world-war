@@ -11,22 +11,22 @@ pipeline {
   stage('Docker Build and Tag') {
            steps {  
 		 
-                sh 'docker build -t samplewebapp:latest .' 
-                sh 'docker tag samplewebapp dgmarjun/samplewebapp:latest' 
+                sh 'sudo docker build -t samplewebapp:latest .' 
+                sh 'sudo docker tag samplewebapp dgmarjun/samplewebapp:latest' 
             }
         }
 
 stage('Login to Docker hub') {
            steps {
               
-                sh 'docker login --username=dgmarjun --password=Malli@1977'
+                sh 'sudo docker login --username=dgmarjun --password=Malli@1977'
           }
         }
      
   stage('Publish image to Docker Hub') {
           
             steps {
-       	  sh  'docker push dgmarjun/samplewebapp:latest'  
+       	  sh  'sudo docker push dgmarjun/samplewebapp:latest'  
         }                 
           
         }     
@@ -34,7 +34,7 @@ stage('Login to Docker hub') {
              
             steps 
 	      {
-                sh "docker run -d -p 8003:8080 dgmarjun/samplewebapp:latest"
+                sh "sudo docker run -d -p 8003:8080 dgmarjun/samplewebapp:latest"
              }
         }
  
