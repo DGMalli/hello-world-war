@@ -34,7 +34,7 @@ stage('Login to Docker hub') {
              
             steps 
 	      {
-                sh "sudo docker run -d -p 8003:8080 dgmarjun/samplewebapp:latest"
+                sh "sudo docker run -d -p 8004:8080 dgmarjun/samplewebapp:latest"
              }
         }
  
