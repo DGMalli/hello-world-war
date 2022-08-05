@@ -62,6 +62,6 @@ stage('Login to Docker hub') {
                 sh 'sudo docker run -d -p 8124:8080 dgmarjun/samplewebapp:latest'
              }
         }
- 
+	 }
     }
 	}
