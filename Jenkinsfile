@@ -17,8 +17,8 @@ pipeline {
                     }
            steps {  
 		 
-                sh 'sudo docker build -t samplewebapp:latest .' 
-                sh 'sudo docker tag samplewebapp dgmarjun/samplewebapp:latest' 
+                sh 'docker build -t samplewebapp:latest .' 
+                sh 'docker tag samplewebapp dgmarjun/samplewebapp:latest' 
             }
         }
 
@@ -28,7 +28,7 @@ stage('Login to Docker hub') {
                     }
            steps {
               
-                sh 'sudo docker login --username=dgmarjun --password=Malli@1977'
+                sh 'docker login --username=dgmarjun --password=Malli@1977'
           }
         }
      
@@ -38,7 +38,7 @@ stage('Login to Docker hub') {
                     }
           
             steps {
-       	  sh  'sudo docker push dgmarjun/samplewebapp:latest'  
+       	  sh  'docker push dgmarjun/samplewebapp:latest'  
         }                 
           
         }     
@@ -50,7 +50,7 @@ stage('Login to Docker hub') {
                         }      
         
                  steps {
-                sh 'sudo docker run -d -p 8005:8080 dgmarjun/samplewebapp:latest'
+                sh 'docker run -d -p 8005:8080 dgmarjun/samplewebapp:latest'
              }
         }
                   stage('deploy on jenkins hub'){
@@ -59,7 +59,7 @@ stage('Login to Docker hub') {
                         }
         
                  steps {
-                sh 'sudo docker run -d -p 8124:8080 dgmarjun/samplewebapp:latest'
+                sh 'docker run -d -p 8124:8080 dgmarjun/samplewebapp:latest'
              }
         }
 	 }
