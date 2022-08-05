@@ -42,24 +42,24 @@ stage('Login to Docker hub') {
         }                 
           
         }     
-   stage('Parallal execution"){
+   stage('Parallal execution'){
          parallel {
-           stage('deploy on docker hub"){
+           stage('deploy on docker hub'){
                   agent {
                           label "doc_node"
                         }      
         
                  steps {
-                sh "sudo docker run -d -p 8005:8080 dgmarjun/samplewebapp:latest"
+                sh 'sudo docker run -d -p 8005:8080 dgmarjun/samplewebapp:latest'
              }
         }
-                  stage('deploy on jenkins hub"){
+                  stage('deploy on jenkins hub'){
                         agent {
                           label "new_slave"
                         }
         
                  steps {
-                sh "sudo docker run -d -p 8124:8080 dgmarjun/samplewebapp:latest"
+                sh 'sudo docker run -d -p 8124:8080 dgmarjun/samplewebapp:latest'
              }
         }
  
