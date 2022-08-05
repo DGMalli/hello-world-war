@@ -33,7 +33,7 @@ stage('Login to Docker hub') {
    stage('Parallal execution"){
          parallel {
            stage('deploy on docker hub"){
-                       
+                 agent any      
         
                  steps {
                 sh "sudo docker run -d -p 8005:8080 dgmarjun/samplewebapp:latest"
