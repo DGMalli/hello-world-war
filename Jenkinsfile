@@ -41,7 +41,7 @@ stage('Login to Docker hub') {
         }
                   stage('deploy on jenkins hub"){
                         agent {
-                          label "jenkins_node"
+                          label "jenkins"
                         }
         
                  steps {
